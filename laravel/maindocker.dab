@@ -1,0 +1,62 @@
+{
+  "Services": {
+    "memcached": {
+      "Image": "memcached@sha256:9cfbcc6988622e75827d8dc8a1826aa8b088ca5f3f94ae60074149cf6bea3679", 
+      "Networks": [], 
+      "Ports": [
+        {
+          "Port": 6969, 
+          "Protocol": "tcp"
+        }
+      ]
+    }, 
+    "mysql": {
+      "Env": [
+        "MYSQL_ROOT_PASSWORD=MGZvCIeSNeTTstWViDHdrNzIof8edCYWSdbe6YGCCPedpvemHlf14BHLqF4dzrr", 
+        "MYSQL_PASSWORD=MGZvCIeSNeTTstWViDHdrNzIof8edCYWSdbe6YGCCPedpvemHlf14BHLqF4dzrr", 
+        "MYSQL_USER=gzgaming_user", 
+        "MYSQL_DATABASE=gzgaming_wp"
+      ], 
+      "Image": "mysql/mysql-server@sha256:b52eb7d36e5cdb505b0d236416dd3cc2c68506ea26921790ef66500294b62c57", 
+      "Networks": [], 
+      "Ports": [
+        {
+          "Port": 3306, 
+          "Protocol": "tcp"
+        }
+      ]
+    }, 
+    "mysql2": {
+      "Env": [
+        "MYSQL_PASSWORD=gihweo67", 
+        "MYSQL_ROOT_PASSWORD=gihweo67", 
+        "MYSQL_USER=gzgaming_champ", 
+        "MYSQL_DATABASE=gzgaming_champ_db"
+      ], 
+      "Image": "mysql/mysql-server@sha256:b52eb7d36e5cdb505b0d236416dd3cc2c68506ea26921790ef66500294b62c57", 
+      "Networks": [], 
+      "Ports": [
+        {
+          "Port": 3306, 
+          "Protocol": "tcp"
+        }
+      ]
+    }, 
+    "php56": {
+      "Env": [
+        "APACHE_DOC_ROOT=/public_html", 
+        "HOST_IP=192.168.99.1"
+      ], 
+      "Image": "php@sha256:c49e75f55ff0c31e541ce292933c26bf33fc818d562d03194e8b8d261f84da60", 
+      "Networks": [], 
+      "Ports": [
+        {
+          "Port": 80, 
+          "Protocol": "tcp"
+        }
+      ], 
+      "WorkingDir": "/public_html"
+    }
+  }, 
+  "Version": "0.1"
+}
