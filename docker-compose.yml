@@ -4,7 +4,7 @@ php56:
   build: .
   #image: laravel:v1
   environment:
-    VIRTUAL_HOST: docker.local
+    VIRTUAL_HOST: project1.local
   volumes:
     - ./laravel/:/var/www/html/
   links:
