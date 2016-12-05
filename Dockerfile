@@ -19,6 +19,14 @@ RUN php -r "unlink('composer-setup.php');"
 #Used to turn on modrewrite for apache
 RUN a2enmod rewrite
 
+#Install NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_7.x
+RUN apt-get install -y nodejs
+
+#Install NPM
+RUN apt-get install npm -y
+
+
 COPY 000-default.conf /etc/apache2/sites-enabled/
 
 
