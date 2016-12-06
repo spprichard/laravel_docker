@@ -2,10 +2,11 @@ FROM php:5-apache
 
 MAINTAINER Steven 
 
-RUN apt-get update
+#Install NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 
 #Install everthing that composer need
-RUN apt-get install -y zip unzip curl git
+RUN apt-get install -y zip unzip curl git nodejs
 
 #Get the cpmoser installer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -19,20 +20,13 @@ RUN php -r "unlink('composer-setup.php');"
 #Used to turn on modrewrite for apache
 RUN a2enmod rewrite
 
-#Install NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
-RUN apt-get install -y nodejs
-
-#Install NPM
-#RUN apt-get install npm -y
-
 COPY ./laravel/package.json /var/www/html
 
 #COPY over start script
-ADD start.sh /run/
+COPY start.sh /run/
 
-##Get all dependencies
-#RUN npm install
+#Gives execute permissions
+RUN chmod +x /run/start.sh
 
 COPY 000-default.conf /etc/apache2/sites-enabled/
 
