@@ -1,0 +1,14 @@
+#Start from Dev Environment
+FROM sprichard/laraveldocker:latest
+
+#Copy Source into Image
+COPY laravel/ ./
+
+#Remove non-required node
+RUN apt-get remove nodejs -y
+
+#INSERT: How to remove composer
+#
+
+#Starts up Apache Web Server
+CMD ["apache2-foreground"]
