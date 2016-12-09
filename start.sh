@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cd /var/www/html
+
 echo "Start Install"
 npm install
 composer install
