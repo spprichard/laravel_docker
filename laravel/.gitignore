@@ -1,9 +1,14 @@
-/node_modules
-/public/storage
-/storage/*.key
-/vendor
-/.idea
-Homestead.json
-Homestead.yaml
+# Created by .ignore support plugin (hsz.mobi)
 .env
-database/db/*
+composer.phar
+/.idea
+/vendor
+public_html/wp
+public_html/bower_components
+.sass-cache
+.vagrant
+node_modules
+config.yaml
+puphpet/config.yaml
+public_html/app/assets/css/build
+npm-debug.log
