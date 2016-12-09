@@ -1,14 +1,9 @@
-# Created by .ignore support plugin (hsz.mobi)
-.env
-composer.phar
-/.idea
+/node_modules
+/public/storage
+/storage/*.key
 /vendor
-public_html/wp
-public_html/bower_components
-.sass-cache
-.vagrant
-node_modules
-config.yaml
-puphpet/config.yaml
-public_html/app/assets/css/build
-npm-debug.log
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+database/db/*
