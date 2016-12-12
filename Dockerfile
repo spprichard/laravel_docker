@@ -31,7 +31,4 @@ RUN chmod +x /run/start.sh
 COPY 000-default.conf /etc/apache2/sites-enabled/
 
 #Run start script
-CMD ["/run/start.sh"]
-
-
-
+CMD ["/bin/bash", "/run/start.sh"]
